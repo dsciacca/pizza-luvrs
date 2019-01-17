@@ -40,6 +40,7 @@ module.exports.registerPlugins = (server, callback) => {
     });
 
     const cache = server.cache({
+      cache: 'redis',
       segment: 'sessions',
       expiresIn: 24 * 60 * 60 * 1000
     });
@@ -69,7 +70,7 @@ module.exports.registerPlugins = (server, callback) => {
     });
 
     // setup data
-    require('./data/mock.js').insertData();
+    //require('./data/mock.js').insertData();
 
     callback();
   });
